@@ -1,14 +1,11 @@
-window.addEventListener('DOMContentLoaded', function() {
-    'use strict';
+import slideMenu from "./menu.js";
+import renderVideo from "./renderVideo.js";
 
-    let burgerBtn = document.querySelector('.header__burger-btn'),
-        closeBtn = document.querySelector('.nav__close'),
-        navigation = document.querySelector('.nav');
-
-    burgerBtn.addEventListener('click', function() {
-        navigation.style.display = 'flex';
-    });
-    closeBtn.addEventListener('click', function() {
-        navigation.style.display = 'none';
-    });
+slideMenu({
+	openBtn: '.header__burger-btn',
+	menu: '.nav', 
+	classActiveMenu: 'nav_active', 
+	closeTrigger: '.nav__link, .nav__close'
 });
+
+renderVideo();
