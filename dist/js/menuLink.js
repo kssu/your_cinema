@@ -1,4 +1,4 @@
-import { getPopular, getTop } from './servises.js';
+import {getTrends, getPopular, getTop } from './servises.js';
 import renderCard from './renderCard.js';
 
 const title = document.querySelector('.other-films__title'),
@@ -19,7 +19,7 @@ const menuLink = () => {
                 title.textContent = target.textContent;
 
                 if(target.classList.contains('get_nav__link_trends')) {
-                    getPopular()
+                    getTrends()
                     .then(data => renderCard(data.results));
                 }
 

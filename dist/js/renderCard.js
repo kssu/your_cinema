@@ -3,7 +3,7 @@ import { getVideo } from "./servises.js";
 const listCards = document.querySelector('.other-films__list');
 
 
-const renderCard = async (data, type = 'all') => {
+const renderCard = async (data, type) => {
 
     listCards.textContent = '';
 
