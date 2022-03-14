@@ -36,6 +36,7 @@ const LANGUAGE = '&language=en-EN';
         return await getData(url);
     };
 
+
     export const search = async(query, page) => {
         const url = `${BASE_URL}search/multi?api_key=${API_KEY}${LANGUAGE}&page=${page}&include_adult=false&query=${query}`;
         return await getData(url);

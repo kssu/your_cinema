@@ -1,12 +1,10 @@
-import {
-    getPopular,
-    getTop
-} from './servises.js';
+import { getPopular, getTop } from './servises.js';
 import renderCard from './renderCard.js';
 
 const title = document.querySelector('.other-films__title'),
     filmWeek = document.querySelector('.film-week'),
     getNav = document.querySelectorAll('.get_nav');
+
 
 const menuLink = () => {
     getNav.forEach(nav => {
@@ -27,20 +25,20 @@ const menuLink = () => {
 
                 if(target.classList.contains('get_nav__link_popular-movies')) {
                     getPopular('movie')
-                    .then(data => renderCard(data.results));
+                    .then(data => renderCard(data.results, 'movie'));
                 }
                 if(target.classList.contains('get_nav__link_popular-series')) {
                     getPopular('tv')
-                    .then(data => renderCard(data.results));
+                    .then(data => renderCard(data.results, 'tv'));
                 }
 
                 if(target.classList.contains('get_nav__link_top-movies')) {
                     getTop('movie')
-                    .then(data => renderCard(data.results));
+                    .then(data => renderCard(data.results, 'movie'));
                 }
                 if(target.classList.contains('get_nav__link_top-series')) {
                     getTop('tv')
-                    .then(data => renderCard(data.results));
+                    .then(data => renderCard(data.results, 'tv'));
                 }
             }
         });

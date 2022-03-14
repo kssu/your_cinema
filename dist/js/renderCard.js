@@ -3,13 +3,14 @@ import { getVideo } from "./servises.js";
 const listCards = document.querySelector('.other-films__list');
 
 
-const renderCard = async (data) => {
+const renderCard = async (data, type = 'all') => {
 
     listCards.textContent = '';
 
-    Promise.all( data.map(async (item) =>{
+    Promise.all(data.map(async (item) => {
+		const mediaType = item.media_type ?? type;
 
-        const video = await getVideo(item.id, item.media_type)
+        const video = await getVideo(item.id, mediaType);
         const key = video.results[0]?.key;
         const card = document.createElement('li');
         card.className = 'other-films__item';
